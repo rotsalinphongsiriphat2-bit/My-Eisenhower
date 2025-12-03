@@ -555,7 +555,7 @@
                 </div>
 
                 <div class="action-buttons">
-                    <button class="btn btn-save" onclick="saveAsImage()">💾 บันทึกเป็นรูป</button>
+                    <button class="btn btn-save" id="saveBtn">💾 บันทึกเป็นรูป</button>
                     <button class="btn btn-reset" onclick="resetAll()">🔄 เริ่มใหม่</button>
                 </div>
             </div>
