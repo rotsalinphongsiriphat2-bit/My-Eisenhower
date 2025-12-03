@@ -358,10 +358,10 @@
         }
 
         .action-buttons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
             gap: 10px;
             margin-top: 20px;
+            justify-content: center;
         }
 
         .btn {
@@ -383,15 +383,6 @@
             color: white;
         }
 
-        .btn-summary {
-            background: #1A4B84;
-            color: white;
-        }
-
-        .btn-summary:hover {
-            background: #163d6b;
-        }
-
         .btn-reset {
             background: #e74c3c;
             color: white;
@@ -399,214 +390,6 @@
 
         .btn-reset:hover {
             background: #c0392b;
-        }
-
-        .btn-close {
-            width: 100%;
-            padding: 12px;
-            background: #95a5a6;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .btn-close:hover {
-            background: #7f8c8d;
-        }
-
-        .summary-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            padding: 20px;
-            overflow-y: auto;
-            animation: fadeIn 0.3s ease;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .summary-modal.show {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .summary-content {
-            background: white;
-            border-radius: 20px;
-            max-width: 600px;
-            width: 100%;
-            max-height: 90vh;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            animation: slideUp 0.3s ease;
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .summary-header {
-            background: linear-gradient(135deg, #1A4B84 0%, #2563A8 100%);
-            color: white;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .summary-header h2 {
-            font-size: 18px;
-            margin: 0;
-        }
-
-        .close-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            color: white;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            font-size: 20px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.3s;
-        }
-
-        .close-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .summary-body {
-            padding: 25px;
-            overflow-y: auto;
-            flex: 1;
-        }
-
-        .summary-footer {
-            padding: 20px;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .priority-section {
-            margin-bottom: 25px;
-        }
-
-        .priority-section h3 {
-            font-size: 16px;
-            margin-bottom: 12px;
-            padding: 10px 15px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .priority-section.p1 h3 {
-            background: #fee;
-            color: #e74c3c;
-        }
-
-        .priority-section.p2 h3 {
-            background: #e8f8f5;
-            color: #27ae60;
-        }
-
-        .priority-section.p3 h3 {
-            background: #fff5e6;
-            color: #f39c12;
-        }
-
-        .priority-section.p4 h3 {
-            background: #f5f5f5;
-            color: #95a5a6;
-        }
-
-        .task-list-item {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 12px;
-            border-left: 4px solid;
-        }
-
-        .task-list-item.p1 {
-            border-color: #e74c3c;
-        }
-
-        .task-list-item.p2 {
-            border-color: #27ae60;
-        }
-
-        .task-list-item.p3 {
-            border-color: #f39c12;
-        }
-
-        .task-list-item.p4 {
-            border-color: #95a5a6;
-        }
-
-        .task-list-item .task-name {
-            font-weight: 600;
-            font-size: 15px;
-            color: #333;
-            margin-bottom: 8px;
-        }
-
-        .task-list-item .subtask-list {
-            margin-left: 15px;
-        }
-
-        .task-list-item .subtask-list-item {
-            font-size: 13px;
-            color: #666;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .task-list-item .due-badge {
-            display: inline-block;
-            padding: 3px 8px;
-            background: #1A4B84;
-            color: white;
-            border-radius: 5px;
-            font-size: 11px;
-            font-weight: 600;
-        }
-
-        .empty-priority {
-            color: #999;
-            font-style: italic;
-            padding: 10px;
-            text-align: center;
         }
 
         .empty-state {
@@ -776,21 +559,7 @@
                 </div>
 
                 <div class="action-buttons">
-                    <button class="btn btn-summary" id="summaryBtn">📋 สรุปข้อมูล</button>
                     <button class="btn btn-reset" onclick="resetAll()">🔄 เริ่มใหม่</button>
-                </div>
-
-                <div class="summary-modal" id="summaryModal">
-                    <div class="summary-content">
-                        <div class="summary-header">
-                            <h2>📋 สรุปรายการงานตามลำดับความสำคัญ</h2>
-                            <button class="close-btn" onclick="closeSummary()">✕</button>
-                        </div>
-                        <div class="summary-body" id="summaryBody"></div>
-                        <div class="summary-footer">
-                            <button class="btn btn-close" onclick="closeSummary()">ปิด</button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
